@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DentAxis — professional offline dental clinic management software for Windows. Patients, appointments, 3D tooth chart, billing, reports — in English and Arabic." />
+  <meta property="og:title" content="DentAxis — Dental Clinic Management" />
+  <meta property="og:description" content="Professional offline dental clinic management for Windows. English & Arabic." />
+  <meta property="og:image" content="hero-screenshot.png" />
+  <meta property="og:type" content="website" />
+  <title>DentAxis — Dental Clinic Management for Windows</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    :root {
+      --accent: #1a56db;
+      --accent-hover: #1648c0;
+      --accent-light: #e8effc;
+      --ink: #0f172a;
+      --muted: #5b6779;
+      --faint: #94a3b8;
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --border: #e5eaf1;
+      --whatsapp: #16a34a;
+      --radius: 16px;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 8px 30px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 24px 70px rgba(26, 86, 219, 0.16);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, video { max-width: 100%; height: auto; display: block; }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Header ─────────────────────────────────── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      height: 64px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .brand svg { width: 34px; height: 34px; color: var(--accent); }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+      margin-inline-start: auto;
+    }
+
+    .nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav a:hover { color: var(--accent); }
+
+    .header-cta { margin-inline-start: 8px; }
+
+    /* ── Buttons ────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 22px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #3b76f6);
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(26, 86, 219, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(26, 86, 219, 0.45);
+    }
+
+    .btn-whatsapp {
+      background: #fff;
+      color: #15803d;
+      border-color: #bbf7d0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-whatsapp:hover {
+      background: #f0fdf4;
+      border-color: #22c55e;
+      transform: translateY(-1px);
+    }
+
+    .btn-sm { padding: 9px 16px; font-size: 13.5px; border-radius: 10px; }
+
+    /* ── Hero ───────────────────────────────────── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 72px 0 40px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -300px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1100px;
+      height: 700px;
+      background: radial-gradient(ellipse at center, rgba(26, 86, 219, 0.12), transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 0.9fr 1.15fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-visual {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid #cdddfa;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 4.6vw, 3.15rem);
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--accent), #7c3aed);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 460px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--faint);
+    }
+
+    .trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .trust svg { width: 15px; height: 15px; color: #22c55e; }
+
+    .hero-shot {
+      position: relative;
+      width: 100%;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .hero-shot img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-shot .bar {
+      display: flex;
+      gap: 6px;
+      padding: 11px 14px;
+      background: #f1f5f9;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-shot .bar i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #d7dee9;
+    }
+
+    .hero-shot .bar i:first-child { background: #fca5a5; }
+    .hero-shot .bar i:nth-child(2) { background: #fcd34d; }
+    .hero-shot .bar i:nth-child(3) { background: #86efac; }
+
+    /* ── Sections ───────────────────────────────── */
+    section { padding: 72px 0; }
+
+    .section-head {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 44px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.6rem, 3vw, 2.15rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    /* ── Video ──────────────────────────────────── */
+    .video-frame {
+      max-width: 880px;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #0f172a;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .video-frame video { width: 100%; height: auto; }
+
+    /* ── Features ───────────────────────────────── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px 24px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+    }
+
+    .feature:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #cdddfa;
+    }
+
+    .feature .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .feature .icon svg { width: 22px; height: 22px; }
+
+    .feature h3 { font-size: 16px; margin-bottom: 7px; letter-spacing: -0.01em; }
+
+    .feature p { font-size: 13.5px; color: var(--muted); }
+
+    /* ── Showcase ───────────────────────────────── */
+    .showcase { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .show-row {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 48px;
+      align-items: center;
+      padding: 34px 0;
+    }
+
+    .show-row + .show-row { border-top: 1px solid var(--border); }
+
+    .show-row:nth-child(even) .show-text { order: 2; }
+
+    .show-text .tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .show-text h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .show-text p { color: var(--muted); font-size: 15px; max-width: 400px; }
+
+    .show-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      background: #fff;
+    }
+
+    /* ── CTA / Contact ──────────────────────────── */
+    .cta-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #10265c, #1a56db 60%, #3b76f6);
+      border-radius: 22px;
+      padding: 56px 32px;
+      text-align: center;
+      color: #fff;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-card::after {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-card h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .cta-card p {
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 28px;
+      font-size: 15.5px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .cta-card .btn-whatsapp {
+      background: #fff;
+      border-color: transparent;
+    }
+
+    .cta-card .btn-outline {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .cta-card .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .cta-note {
+      margin-top: 18px;
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ── Footer ─────────────────────────────────── */
+    .site-footer {
+      padding: 34px 0 44px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--faint);
+    }
+
+    .site-footer .brand {
+      justify-content: center;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .site-footer .brand svg { width: 26px; height: 26px; }
+
+    /* ── Responsive ─────────────────────────────── */
+    @media (min-width: 1100px) {
+      .hero-visual {
+        margin-inline-end: -56px;
+      }
+
+      .hero-shot {
+        border-radius: 18px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .hero { padding-top: 48px; text-align: center; }
+      .hero-sub { margin-inline: auto; }
+      .hero-actions, .trust { justify-content: center; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .show-row { grid-template-columns: 1fr; gap: 22px; }
+      .show-row:nth-child(even) .show-text { order: 0; }
+      .nav { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      .features-grid { grid-template-columns: 1fr; }
+      section { padding: 52px 0; }
+      .btn { width: 100%; }
+      .hero-actions { flex-direction: column; }
+      .cta-actions { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="DentAxis home">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="currentColor"/><path fill="#fff" fill-opacity="0.95" d="M50 20c-7 0-13 6-13 13 0 4.5 1.5 6.8 3 10 2 4.5 3.2 10.5 4.2 14 .5 1.8 1.6 2.2 2.2 1 .6-1.3 1.2-4.2 1.8-7 .4-1.7.8-2.6 1.8-2.6s1.4.9 1.8 2.6c.6 2.8 1.2 5.7 1.8 7 .6 1.2 1.7.8 2.3-.2 1-3.5 2.2-9.5 4.2-14 1.5-3.2 3-5.5 3-10 0-7-6-13-13-13z"/></svg>
+        DentAxis
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#demo">Demo</a>
+        <a href="#features">Features</a>
+        <a href="#showcase">Screenshots</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="https://github.com/MohOneX/DentAxis-Releases/releases" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+      </a>
+    </div>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Windows Desktop · English &amp; Arabic</span>
+        <h1>Run your dental clinic with <span class="grad">total precision</span> — fully offline</h1>
+        <p class="hero-sub">DentAxis brings patients, appointments, treatments, 3D tooth charts, billing, and reports together in one fast desktop app. Your data never leaves your clinic.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/MohOneX/DentAxis-Releases/releases" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download for Windows
+          </a>
+          <a class="btn btn-whatsapp js-wa" href="#" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp support
+          </a>
+        </div>
+        <div class="trust">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>100% offline</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>English &amp; Arabic (RTL)</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free updates</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-shot">
+          <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <img src="hero-screenshot.png" alt="DentAxis dashboard showing appointments, patients, revenue charts and treatment analytics" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Video demo ── -->
+  <section id="demo">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>See DentAxis in action</h2>
+        <p>A one-minute tour of the dashboard, patients, tooth chart, and billing workflow.</p>
+      </div>
+      <div class="video-frame">
+        <video controls preload="metadata" poster="hero-screenshot.png">
+          <source src="demo.mp4" type="video/mp4" />
+          Your browser does not support video playback.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Features ── -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Everything your clinic needs</h2>
+        <p>Purpose-built modules that cover the full patient journey — from booking to final report.</p>
+      </div>
+      <div class="features-grid">
+        <article class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Patients &amp; appointments</h3>
+          <p>Complete patient records with smart scheduling, day views, and appointment tracking.</p>
+        </article>
+        <article class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 5 5 5 8c0 2 1 4 1 6s-1 6 2 6c2 0 2-3 4-3s2 3 4 3c3 0 2-4 2-6s1-4 1-6c0-3-3-6-7-6z"/></svg></div>
+          <h3>3D tooth chart</h3>
+          <p>Interactive 3D chart with FDI &amp; Universal notation, per-tooth status and root canal data.</p>
+        </article>
+        <article class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <h3>Treatments &amp; implants</h3>
+          <p>Endodontics, orthodontics, implants with phase tracking — every procedure documented.</p>
+        </article>
+        <article class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>Billing &amp; invoices</h3>
+          <p>Invoices, payments, installments, and printable receipts with your clinic branding.</p>
+        </article>
+        <article class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <h3>Reports &amp; analytics</h3>
+          <p>Revenue trends, top procedures, and printable dental reports — exportable to CSV/PDF.</p>
+        </article>
+        <article class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <h3>English &amp; Arabic</h3>
+          <p>Full right-to-left support so every staff member works in the language they prefer.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Showcase ── -->
+  <section class="showcase" id="showcase">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Designed for clinical work</h2>
+        <p>Clean, fast screens that your team learns in minutes.</p>
+      </div>
+
+      <div class="show-row">
+        <div class="show-text">
+          <span class="tag">3D Tooth Chart</span>
+          <h3>Every tooth, in full detail</h3>
+          <p>Rotate, zoom, and select any tooth. Track conditions, root canal working lengths, and clinical notes — FDI and Universal notation side by side.</p>
+        </div>
+        <div class="show-img"><img src="screenshot-toothchart.png" alt="Interactive 3D tooth chart with selected tooth details" loading="lazy" /></div>
+      </div>
+
+      <div class="show-row">
+        <div class="show-text">
+          <span class="tag">Analytics</span>
+          <h3>Know what drives your revenue</h3>
+          <p>Top procedures, counts, and revenue at a glance — with one-click CSV export for deeper analysis.</p>
+        </div>
+        <div class="show-img"><img src="screenshot-analytics.png" alt="Top procedures analytics with revenue table" loading="lazy" /></div>
+      </div>
+
+      <div class="show-row">
+        <div class="show-text">
+          <span class="tag">Dental Reports</span>
+          <h3>Professional printable reports</h3>
+          <p>Generate confidential patient chart reports with treatment history, legends, and your clinic's branding — ready to print or save as PDF.</p>
+        </div>
+        <div class="show-img"><img src="screenshot-dental-report.png" alt="Printable dental chart report with treatment history" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA / Contact ── -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="cta-card">
+        <h2>Ready to modernize your clinic?</h2>
+        <p>Get a license, ask a question, or request a live demo — we usually reply within a few hours.</p>
+        <div class="cta-actions">
+          <a class="btn btn-whatsapp js-wa" href="#" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+          <a class="btn btn-outline" href="https://github.com/MohOneX/DentAxis-Releases/releases" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download latest version
+          </a>
+        </div>
+        <p class="cta-note">Licensed software · Your data stays on your PC</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="DentAxis">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="currentColor" style="color:#1a56db"/><path fill="#fff" fill-opacity="0.95" d="M50 20c-7 0-13 6-13 13 0 4.5 1.5 6.8 3 10 2 4.5 3.2 10.5 4.2 14 .5 1.8 1.6 2.2 2.2 1 .6-1.3 1.2-4.2 1.8-7 .4-1.7.8-2.6 1.8-2.6s1.4.9 1.8 2.6c.6 2.8 1.2 5.7 1.8 7 .6 1.2 1.7.8 2.3-.2 1-3.5 2.2-9.5 4.2-14 1.5-3.2 3-5.5 3-10 0-7-6-13-13-13z"/></svg>
+        DentAxis
+      </a>
+      <p>© DentAxis. Proprietary software — licensed use only.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var WHATSAPP = '9647807461533';
+      var msg = 'Hello, I am interested in DentAxis dental clinic software.';
+      var url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg);
+      document.querySelectorAll('.js-wa').forEach(function (el) { el.href = url; });
+    })();
+  </script>
+</body>
+</html>
