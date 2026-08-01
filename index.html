@@ -560,7 +560,7 @@
         <a href="#showcase">Screenshots</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="btn btn-primary btn-sm header-cta js-download" data-arch="x64" href="#download" title="Download 64-bit installer">
+      <a class="btn btn-primary btn-sm header-cta js-download" data-arch="x64" href="https://github.com/MohOneX/DentAxis-Releases/releases/download/v2.2.1/DentAxis-Setup-2.2.1.exe" title="Download 64-bit installer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
@@ -576,11 +576,11 @@
         <p class="hero-sub">DentAxis brings patients, appointments, treatments, 3D tooth charts, billing, and reports together in one fast desktop app. Your data never leaves your clinic.</p>
         <div class="hero-actions" id="download">
           <div class="download-stack">
-            <a class="btn btn-primary js-download" data-arch="x64" href="#download">
+            <a class="btn btn-primary js-download" data-arch="x64" href="https://github.com/MohOneX/DentAxis-Releases/releases/download/v2.2.1/DentAxis-Setup-2.2.1.exe">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download for Windows (64-bit)
             </a>
-            <a class="btn btn-secondary js-download" data-arch="ia32" href="#download">
+            <a class="btn btn-secondary js-download" data-arch="ia32" href="https://github.com/MohOneX/DentAxis-Releases/releases/download/v2.2.1/DentAxis-Setup-2.2.1-ia32.exe">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download 32-bit version
             </a>
@@ -713,11 +713,11 @@
             Chat on WhatsApp
           </a>
           <div class="cta-download">
-            <a class="btn btn-outline js-download" data-arch="x64" href="#download">
+            <a class="btn btn-outline js-download" data-arch="x64" href="https://github.com/MohOneX/DentAxis-Releases/releases/download/v2.2.1/DentAxis-Setup-2.2.1.exe">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download 64-bit
             </a>
-            <a class="btn btn-secondary js-download" data-arch="ia32" href="#download">
+            <a class="btn btn-secondary js-download" data-arch="ia32" href="https://github.com/MohOneX/DentAxis-Releases/releases/download/v2.2.1/DentAxis-Setup-2.2.1-ia32.exe">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download 32-bit
             </a>
@@ -743,12 +743,12 @@
     (function () {
       var WHATSAPP = '9647807461533';
       var msg = 'Hello, I am interested in DentAxis dental clinic software.';
-      var url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg);
-      document.querySelectorAll('.js-wa').forEach(function (el) { el.href = url; });
+      var waUrl = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg);
+      document.querySelectorAll('.js-wa').forEach(function (el) { el.href = waUrl; });
 
+      // Buttons already point at direct .exe URLs so clicks always start a download.
+      // Optionally refresh hrefs from the latest GitHub release (no preventDefault / fake clicks).
       var RELEASES_API = 'https://api.github.com/repos/MohOneX/DentAxis-Releases/releases/latest';
-      var CACHE_KEY = 'dentaxis.download.urls.v1';
-      var urls = { x64: null, ia32: null };
 
       function isInstallerExe(name) {
         return /\.exe$/i.test(name) && !/\.blockmap$/i.test(name);
@@ -763,83 +763,24 @@
         return exes.find(function (a) { return !/-ia32\.exe$/i.test(a.name); }) || null;
       }
 
-      function applyDownloadHrefs() {
-        document.querySelectorAll('.js-download').forEach(function (el) {
-          var arch = el.getAttribute('data-arch') || 'x64';
-          var href = urls[arch];
-          if (href) {
-            el.href = href;
-            el.removeAttribute('target');
-          }
-        });
-      }
-
-      function startDownload(href) {
-        // Force file download instead of navigating to the GitHub release page.
-        var a = document.createElement('a');
-        a.href = href;
-        a.rel = 'noopener';
-        a.style.display = 'none';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-      }
-
-      function bindDownloadClicks() {
-        document.querySelectorAll('.js-download').forEach(function (el) {
-          el.addEventListener('click', function (event) {
+      fetch(RELEASES_API, { headers: { Accept: 'application/vnd.github+json' } })
+        .then(function (res) {
+          if (!res.ok) throw new Error('GitHub API ' + res.status);
+          return res.json();
+        })
+        .then(function (data) {
+          var x64 = findWindowsInstaller(data.assets, 'x64');
+          var ia32 = findWindowsInstaller(data.assets, 'ia32');
+          var map = {
+            x64: x64 && x64.browser_download_url,
+            ia32: ia32 && ia32.browser_download_url
+          };
+          document.querySelectorAll('.js-download').forEach(function (el) {
             var arch = el.getAttribute('data-arch') || 'x64';
-            var href = urls[arch] || el.getAttribute('href');
-            if (href && /\/download\//i.test(href) && /\.exe$/i.test(href)) {
-              event.preventDefault();
-              startDownload(href);
-              return;
-            }
-            // Still resolving — wait for API, then download.
-            event.preventDefault();
-            resolveUrls().then(function () {
-              if (urls[arch]) startDownload(urls[arch]);
-            });
+            if (map[arch]) el.href = map[arch];
           });
-        });
-      }
-
-      function resolveUrls() {
-        if (urls.x64 && urls.ia32) return Promise.resolve(urls);
-
-        try {
-          var cached = sessionStorage.getItem(CACHE_KEY);
-          if (cached) {
-            var parsed = JSON.parse(cached);
-            if (parsed && parsed.x64 && parsed.ia32) {
-              urls = parsed;
-              applyDownloadHrefs();
-              return Promise.resolve(urls);
-            }
-          }
-        } catch (e) { /* ignore */ }
-
-        return fetch(RELEASES_API, { headers: { Accept: 'application/vnd.github+json' } })
-          .then(function (res) {
-            if (!res.ok) throw new Error('GitHub API ' + res.status);
-            return res.json();
-          })
-          .then(function (data) {
-            var x64 = findWindowsInstaller(data.assets, 'x64');
-            var ia32 = findWindowsInstaller(data.assets, 'ia32');
-            if (!x64 || !x64.browser_download_url) throw new Error('64-bit installer missing');
-            urls.x64 = x64.browser_download_url;
-            urls.ia32 = ia32 && ia32.browser_download_url ? ia32.browser_download_url : null;
-            try { sessionStorage.setItem(CACHE_KEY, JSON.stringify(urls)); } catch (e) { /* ignore */ }
-            applyDownloadHrefs();
-            return urls;
-          });
-      }
-
-      bindDownloadClicks();
-      resolveUrls().catch(function () {
-        // Keep #download anchors; user can retry after refresh.
-      });
+        })
+        .catch(function () { /* keep hardcoded installer hrefs */ });
     })();
   </script>
 </body>
