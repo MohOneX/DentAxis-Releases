@@ -149,6 +149,10 @@
     .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
     .btn-whatsapp { background: #fff; color: #15803d; border-color: #bbf7d0; box-shadow: var(--shadow-xs); }
     .btn-whatsapp:hover { background: #f0fdf4; border-color: #22c55e; transform: translateY(-1px); }
+    .btn-telegram { background: #fff; color: #0b83bb; border-color: #b6e3f7; box-shadow: var(--shadow-xs); }
+    .btn-telegram:hover { background: #f0f9ff; border-color: #229ED9; transform: translateY(-1px); }
+    .cta-card .btn-telegram { background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.35); }
+    .cta-card .btn-telegram:hover { background: rgba(255,255,255,0.2); border-color: #fff; }
     .btn-dark { background: var(--ink); color: #fff; }
     .btn-dark:hover { background: #1e293b; transform: translateY(-1px); }
     .btn-sm { padding: 9px 16px; font-size: 13.5px; border-radius: 10px; }
@@ -556,7 +560,11 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               <span data-i18n="hero.download32">Download 32-bit version</span>
             </a>
-            <span class="download-hint" data-i18n="hero.downloadHint">Most modern PCs should use 64-bit.</span>
+            <a class="btn btn-telegram btn-lg" href="https://t.me/almustanid/63" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              <span data-i18n="hero.telegram">Download via Telegram</span>
+            </a>
+            <span class="download-hint" data-i18n="hero.downloadHint">Most modern PCs should use 64-bit. Telegram also has 64-bit and 32-bit installers.</span>
           </div>
           <a class="btn btn-whatsapp btn-lg js-wa" data-wa="general" href="#" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -930,6 +938,10 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <span data-i18n="cta.download">Download latest version</span>
           </a>
+          <a class="btn btn-telegram btn-lg" href="https://t.me/almustanid/63" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span data-i18n="cta.telegram">Download via Telegram</span>
+          </a>
         </div>
         <p class="cta-note" data-i18n="cta.note">Licensed software · Your data stays on your PC</p>
       </div>
@@ -958,6 +970,7 @@
           <h4 data-i18n="footer.links">Links</h4>
           <a href="https://dentaxis-portal.pages.dev/" target="_blank" rel="noopener noreferrer" data-i18n="nav.portal">Clinic portal</a>
           <a href="https://github.com/MohOneX/DentAxis-Releases/releases" target="_blank" rel="noopener noreferrer" data-i18n="footer.releases">All releases</a>
+          <a href="https://t.me/almustanid/63" target="_blank" rel="noopener noreferrer" data-i18n="footer.telegram">Download via Telegram</a>
           <a class="js-wa" data-wa="general" href="#" target="_blank" rel="noopener noreferrer" data-i18n="footer.whatsapp">WhatsApp support</a>
         </div>
       </div>
@@ -979,7 +992,9 @@
           'hero.eyebrowTag': 'New', 'hero.eyebrow': 'Windows desktop · English & Arabic',
           'hero.title': 'Run your dental clinic with <span class="grad">total precision</span> — online or offline',
           'hero.sub': 'DentAxis brings patients, appointments, treatments, 3D tooth charts, billing, inventory and reports into one fast desktop app — with optional cloud backup and a clinic portal on your phone.',
-          'hero.download64': 'Download for Windows (64-bit)', 'hero.download32': 'Download 32-bit version', 'hero.downloadHint': 'Most modern PCs should use 64-bit.',
+          'hero.download64': 'Download for Windows (64-bit)', 'hero.download32': 'Download 32-bit version',
+          'hero.telegram': 'Download via Telegram',
+          'hero.downloadHint': 'Most modern PCs should use 64-bit. Telegram also has 64-bit and 32-bit installers.',
           'hero.whatsapp': 'WhatsApp support', 'hero.latest': 'Latest version',
           'hero.trust1': 'Works 100% offline', 'hero.trust2': 'English & Arabic (RTL)', 'hero.trust3': 'Free updates', 'hero.trust4': 'Your data stays in your clinic',
           'hero.chip1': 'Cloud backup', 'hero.chip2': 'Clinic portal on your phone', 'hero.chip3': '3D tooth chart',
@@ -1027,9 +1042,9 @@
           'faq.q4': 'How do I upgrade to Pro or Max?', 'faq.a4': 'Message us on WhatsApp. We activate the subscription on your Google account, and cloud backup and the portal unlock immediately in the app.',
           'faq.q5': 'Which Windows versions are supported?', 'faq.a5': 'Windows 10 and 11, in both 64-bit and 32-bit editions. Updates are delivered automatically inside the app.',
           'cta.title': 'Ready to modernize your clinic?', 'cta.sub': 'Download DentAxis free today, or message us to activate Pro or Max — we usually reply within a few hours.',
-          'cta.whatsapp': 'Chat on WhatsApp', 'cta.download': 'Download latest version', 'cta.note': 'Licensed software · Your data stays on your PC',
+          'cta.whatsapp': 'Chat on WhatsApp', 'cta.download': 'Download latest version', 'cta.telegram': 'Download via Telegram', 'cta.note': 'Licensed software · Your data stays on your PC',
           'footer.tagline': 'Dental clinic management for Windows — offline first, with optional cloud backup and a mobile clinic portal. English & Arabic.',
-          'footer.product': 'Product', 'footer.links': 'Links', 'footer.releases': 'All releases', 'footer.whatsapp': 'WhatsApp support',
+          'footer.product': 'Product', 'footer.links': 'Links', 'footer.releases': 'All releases', 'footer.telegram': 'Download via Telegram', 'footer.whatsapp': 'WhatsApp support',
           'footer.copy': '© {year} DentAxis. Proprietary software — licensed use only.', 'footer.made': 'Made for dental clinics in Iraq and the region.',
           'wa.general': 'Hello, I am interested in DentAxis dental clinic software.',
           'wa.pro': 'Hello, I would like to subscribe to DentAxis Pro (100,000 IQD / year).',
@@ -1042,7 +1057,9 @@
           'hero.eyebrowTag': 'جديد', 'hero.eyebrow': 'تطبيق ويندوز · عربي وإنجليزي',
           'hero.title': 'أدِر عيادتك بـ<span class="grad">دقّة كاملة</span> — مع الإنترنت أو دونه',
           'hero.sub': 'يجمع DentAxis المرضى والمواعيد والعلاجات ومخطط الأسنان ثلاثي الأبعاد والفواتير والمخزون والتقارير في تطبيق واحد سريع — مع نسخ احتياطي سحابي اختياري وبوابة للعيادة على هاتفك.',
-          'hero.download64': 'تحميل لويندوز (64-بت)', 'hero.download32': 'تحميل نسخة 32-بت', 'hero.downloadHint': 'معظم الأجهزة الحديثة تستخدم نسخة 64-بت.',
+          'hero.download64': 'تحميل لويندوز (64-بت)', 'hero.download32': 'تحميل نسخة 32-بت',
+          'hero.telegram': 'تحميل عبر تيليجرام',
+          'hero.downloadHint': 'معظم الأجهزة الحديثة تستخدم نسخة 64-بت. تيليجرام يحتوي أيضاً على نسختَي 64-بت و32-بت.',
           'hero.whatsapp': 'دعم واتساب', 'hero.latest': 'آخر إصدار',
           'hero.trust1': 'يعمل دون إنترنت 100%', 'hero.trust2': 'عربي وإنجليزي', 'hero.trust3': 'تحديثات مجانية', 'hero.trust4': 'بياناتك تبقى في عيادتك',
           'hero.chip1': 'نسخ احتياطي سحابي', 'hero.chip2': 'بوابة العيادة على هاتفك', 'hero.chip3': 'مخطط أسنان ثلاثي الأبعاد',
@@ -1090,9 +1107,9 @@
           'faq.q4': 'كيف أرتقي إلى Pro أو Max؟', 'faq.a4': 'راسلنا على واتساب. نفعّل الاشتراك على حساب Google الخاص بك، فيُفتح النسخ الاحتياطي السحابي والبوابة فوراً داخل التطبيق.',
           'faq.q5': 'ما إصدارات ويندوز المدعومة؟', 'faq.a5': 'ويندوز 10 و11، بنسختَي 64-بت و32-بت. تصل التحديثات تلقائياً داخل التطبيق.',
           'cta.title': 'مستعد لتطوير عيادتك؟', 'cta.sub': 'حمّل DentAxis مجاناً اليوم، أو راسلنا لتفعيل Pro أو Max — نرد عادةً خلال ساعات قليلة.',
-          'cta.whatsapp': 'تحدث معنا على واتساب', 'cta.download': 'تحميل آخر إصدار', 'cta.note': 'برنامج مرخّص · بياناتك تبقى على جهازك',
+          'cta.whatsapp': 'تحدث معنا على واتساب', 'cta.download': 'تحميل آخر إصدار', 'cta.telegram': 'تحميل عبر تيليجرام', 'cta.note': 'برنامج مرخّص · بياناتك تبقى على جهازك',
           'footer.tagline': 'إدارة عيادات الأسنان لويندوز — يعمل دون إنترنت أولاً، مع نسخ احتياطي سحابي اختياري وبوابة للعيادة على الهاتف. عربي وإنجليزي.',
-          'footer.product': 'المنتج', 'footer.links': 'روابط', 'footer.releases': 'كل الإصدارات', 'footer.whatsapp': 'دعم واتساب',
+          'footer.product': 'المنتج', 'footer.links': 'روابط', 'footer.releases': 'كل الإصدارات', 'footer.telegram': 'تحميل عبر تيليجرام', 'footer.whatsapp': 'دعم واتساب',
           'footer.copy': '© {year} DentAxis. برنامج مملوك — للاستخدام المرخّص فقط.', 'footer.made': 'صُمّم لعيادات الأسنان في العراق والمنطقة.',
           'wa.general': 'مرحباً، أنا مهتم ببرنامج DentAxis لإدارة عيادات الأسنان.',
           'wa.pro': 'مرحباً، أرغب بالاشتراك في DentAxis Pro (100,000 دينار عراقي سنوياً).',
