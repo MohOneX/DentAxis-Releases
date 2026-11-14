@@ -1,4 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="22" fill="#1a56db"/>
-  <path fill="#fff" fill-opacity="0.95" d="M50 20c-7 0-13 6-13 13 0 4.5 1.5 6.8 3 10 2 4.5 3.2 10.5 4.2 14 .5 1.8 1.6 2.2 2.2 1 .6-1.3 1.2-4.2 1.8-7 .4-1.7.8-2.6 1.8-2.6s1.4.9 1.8 2.6c.6 2.8 1.2 5.7 1.8 7 .6 1.2 1.7.8 2.3-.2 1-3.5 2.2-9.5 4.2-14 1.5-3.2 3-5.5 3-10 0-7-6-13-13-13z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+  <!-- DentAxis mark: a molar split along its long axis. Tile colour comes from currentColor. -->
+  <defs>
+    <linearGradient id="dentaxisSheen" x1="0" y1="0" x2=".35" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".1"/>
+      <stop offset=".7" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="23" fill="#1a56db"/>
+  <rect width="100" height="100" rx="23" fill="url(#dentaxisSheen)"/>
+  <rect x=".75" y=".75" width="98.5" height="98.5" rx="22.3" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="1.5"/>
+  <path fill="#fff" d="M50,27.5C54,23.5 58,21.5 63,21.5C71,21.5 76.5,26.5 76.5,34C76.5,40.5 74,45.5 71.4,50.5C69.8,53.6 70.4,66 69,74.5C68.3,78.6 63.1,79 62.3,75.2C61.1,69 58,59.5 50,59.5C42,59.5 38.9,69 37.7,75.2C36.9,79 31.7,78.6 31,74.5C29.6,66 30.2,53.6 28.6,50.5C26,45.5 23.5,40.5 23.5,34C23.5,26.5 29,21.5 37,21.5C42,21.5 46,23.5 50,27.5Z"/>
+  <path fill="#c8daee" d="M50 27.5C54,23.5 58,21.5 63,21.5C71,21.5 76.5,26.5 76.5,34C76.5,40.5 74,45.5 71.4,50.5C69.8,53.6 70.4,66 69,74.5C68.3,78.6 63.1,79 62.3,75.2C61.1,69 58,59.5 50,59.5Z"/>
 </svg>

@@ -12,6 +12,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <title data-i18n="meta.title">DentAxis — Dental Clinic Management for Windows</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -509,7 +510,7 @@
   <header class="site-header" id="header">
     <div class="wrap header-inner">
       <a class="brand" href="#top" aria-label="DentAxis home">
-        <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="currentColor"/><path fill="#fff" fill-opacity="0.95" d="M50 20c-7 0-13 6-13 13 0 4.5 1.5 6.8 3 10 2 4.5 3.2 10.5 4.2 14 .5 1.8 1.6 2.2 2.2 1 .6-1.3 1.2-4.2 1.8-7 .4-1.7.8-2.6 1.8-2.6s1.4.9 1.8 2.6c.6 2.8 1.2 5.7 1.8 7 .6 1.2 1.7.8 2.3-.2 1-3.5 2.2-9.5 4.2-14 1.5-3.2 3-5.5 3-10 0-7-6-13-13-13z"/></svg>
+        <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="23" fill="currentColor"/><path fill="#fff" d="M50,27.5C54,23.5 58,21.5 63,21.5C71,21.5 76.5,26.5 76.5,34C76.5,40.5 74,45.5 71.4,50.5C69.8,53.6 70.4,66 69,74.5C68.3,78.6 63.1,79 62.3,75.2C61.1,69 58,59.5 50,59.5C42,59.5 38.9,69 37.7,75.2C36.9,79 31.7,78.6 31,74.5C29.6,66 30.2,53.6 28.6,50.5C26,45.5 23.5,40.5 23.5,34C23.5,26.5 29,21.5 37,21.5C42,21.5 46,23.5 50,27.5Z"/><path fill="#c8daee" d="M50 27.5C54,23.5 58,21.5 63,21.5C71,21.5 76.5,26.5 76.5,34C76.5,40.5 74,45.5 71.4,50.5C69.8,53.6 70.4,66 69,74.5C68.3,78.6 63.1,79 62.3,75.2C61.1,69 58,59.5 50,59.5Z"/></svg>
         DentAxis
       </a>
       <nav class="nav" aria-label="Main">
@@ -590,7 +591,7 @@
         <div class="chip c3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 5 5 5 8c0 2 1 4 1 6s-1 6 2 6c2 0 2-3 4-3s2 3 4 3c3 0 2-4 2-6s1-4 1-6c0-3-3-6-7-6z"/></svg></span><span data-i18n="hero.chip3">3D tooth chart</span></div>
         <div class="hero-shot">
           <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span class="url"></span></div>
-          <img src="hero-screenshot.png" alt="DentAxis dashboard showing appointments, patients, revenue charts, promotions and treatment analytics" loading="eager" fetchpriority="high" />
+          <img class="js-shot" data-shot="hero-screenshot.png" src="screenshots/en/hero-screenshot.png" alt="DentAxis dashboard showing appointments, patients, revenue charts, promotions and treatment analytics" loading="eager" fetchpriority="high" />
         </div>
       </div>
     </div>
@@ -617,7 +618,7 @@
         <p data-i18n="demo.sub">A short tour through the dashboard, patients, tooth chart, billing and the clinic portal.</p>
       </div>
       <div class="video-frame reveal">
-        <video controls preload="metadata" poster="hero-screenshot.png" playsinline>
+        <video class="js-shot" data-shot="hero-screenshot.png" controls preload="metadata" poster="screenshots/en/hero-screenshot.png" playsinline>
           <source src="demo.mp4" type="video/mp4" />
           Your browser does not support video playback.
         </video>
@@ -690,38 +691,47 @@
 
       <div class="show-row reveal">
         <div class="show-text">
-          <span class="tag" data-i18n="showcase.r1.tag">3D tooth chart</span>
-          <h3 data-i18n="showcase.r1.title">Every tooth, in full detail</h3>
-          <p data-i18n="showcase.r1.desc">Rotate, zoom and select any tooth. Track conditions, root canal working lengths and clinical notes — FDI and Universal side by side.</p>
+          <span class="tag" data-i18n="showcase.r1.tag">Appointments</span>
+          <h3 data-i18n="showcase.r1.title">A clear day and month view</h3>
+          <p data-i18n="showcase.r1.desc">See today’s agenda, monthly load and appointment status at a glance — schedule, confirm and follow up without leaving the calendar.</p>
         </div>
-        <div class="show-img"><img src="screenshot-toothchart.png" alt="Interactive 3D tooth chart with selected tooth details" loading="lazy" /></div>
+        <div class="show-img"><img class="js-shot" data-shot="screenshot-appointments.png" src="screenshots/en/screenshot-appointments.png" alt="Appointments calendar and daily agenda" loading="lazy" /></div>
       </div>
 
       <div class="show-row reveal">
         <div class="show-text">
-          <span class="tag" data-i18n="showcase.r2.tag">Analytics</span>
-          <h3 data-i18n="showcase.r2.title">Know what drives your revenue</h3>
-          <p data-i18n="showcase.r2.desc">Top procedures, counts and revenue at a glance — with one-click CSV export for deeper analysis.</p>
+          <span class="tag" data-i18n="showcase.r2.tag">3D tooth chart</span>
+          <h3 data-i18n="showcase.r2.title">Every tooth, in full detail</h3>
+          <p data-i18n="showcase.r2.desc">Rotate, zoom and select any tooth. Track conditions, root canal working lengths and clinical notes — FDI and Universal side by side.</p>
         </div>
-        <div class="show-img"><img src="screenshot-analytics.png" alt="Top procedures analytics with revenue table" loading="lazy" /></div>
+        <div class="show-img"><img class="js-shot" data-shot="screenshot-toothchart.png" src="screenshots/en/screenshot-toothchart.png" alt="Interactive 3D tooth chart with selected tooth details" loading="lazy" /></div>
       </div>
 
       <div class="show-row reveal">
         <div class="show-text">
-          <span class="tag" data-i18n="showcase.r3.tag">Implant analytics</span>
-          <h3 data-i18n="showcase.r3.title">Follow every implant case</h3>
-          <p data-i18n="showcase.r3.desc">Phase tracking from planning to restoration, collected payments and upcoming follow-up visits.</p>
+          <span class="tag" data-i18n="showcase.r3.tag">2D tooth chart</span>
+          <h3 data-i18n="showcase.r3.title">Classic charting, still precise</h3>
+          <p data-i18n="showcase.r3.desc">Switch to the 2D chart for fast quadrant review — surfaces, conditions and selected-tooth details stay in sync with your clinical record.</p>
         </div>
-        <div class="show-img"><img src="screenshot-implant-analytics.png" alt="Implant analytics with phases and payments" loading="lazy" /></div>
+        <div class="show-img"><img class="js-shot" data-shot="screenshot-dental-report.png" src="screenshots/en/screenshot-dental-report.png" alt="2D tooth chart with selected tooth and findings" loading="lazy" /></div>
       </div>
 
       <div class="show-row reveal">
         <div class="show-text">
-          <span class="tag" data-i18n="showcase.r4.tag">Dental reports</span>
-          <h3 data-i18n="showcase.r4.title">Professional printable reports</h3>
-          <p data-i18n="showcase.r4.desc">Confidential patient chart reports with treatment history, legends and your clinic branding — print or save as PDF.</p>
+          <span class="tag" data-i18n="showcase.r4.tag">Reports &amp; analytics</span>
+          <h3 data-i18n="showcase.r4.title">Know what drives your revenue</h3>
+          <p data-i18n="showcase.r4.desc">Money received, outstanding balances and trends over time — with filters by date and dentist, plus export when you need deeper analysis.</p>
         </div>
-        <div class="show-img"><img src="screenshot-dental-report.png" alt="Printable dental chart report with treatment history" loading="lazy" /></div>
+        <div class="show-img"><img class="js-shot" data-shot="screenshot-analytics.png" src="screenshots/en/screenshot-analytics.png" alt="Reports dashboard with revenue summary and chart" loading="lazy" /></div>
+      </div>
+
+      <div class="show-row reveal">
+        <div class="show-text">
+          <span class="tag" data-i18n="showcase.r5.tag">Implant analytics</span>
+          <h3 data-i18n="showcase.r5.title">Follow every implant case</h3>
+          <p data-i18n="showcase.r5.desc">Phase tracking from planning to restoration, collected payments and upcoming follow-up visits.</p>
+        </div>
+        <div class="show-img"><img class="js-shot" data-shot="screenshot-implant-analytics.png" src="screenshots/en/screenshot-implant-analytics.png" alt="Implant analytics with phases and payments" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -959,7 +969,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a class="brand" href="#top" aria-label="DentAxis">
-            <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="currentColor"/><path fill="#fff" fill-opacity="0.95" d="M50 20c-7 0-13 6-13 13 0 4.5 1.5 6.8 3 10 2 4.5 3.2 10.5 4.2 14 .5 1.8 1.6 2.2 2.2 1 .6-1.3 1.2-4.2 1.8-7 .4-1.7.8-2.6 1.8-2.6s1.4.9 1.8 2.6c.6 2.8 1.2 5.7 1.8 7 .6 1.2 1.7.8 2.3-.2 1-3.5 2.2-9.5 4.2-14 1.5-3.2 3-5.5 3-10 0-7-6-13-13-13z"/></svg>
+            <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="23" fill="currentColor"/><path fill="#fff" d="M50,27.5C54,23.5 58,21.5 63,21.5C71,21.5 76.5,26.5 76.5,34C76.5,40.5 74,45.5 71.4,50.5C69.8,53.6 70.4,66 69,74.5C68.3,78.6 63.1,79 62.3,75.2C61.1,69 58,59.5 50,59.5C42,59.5 38.9,69 37.7,75.2C36.9,79 31.7,78.6 31,74.5C29.6,66 30.2,53.6 28.6,50.5C26,45.5 23.5,40.5 23.5,34C23.5,26.5 29,21.5 37,21.5C42,21.5 46,23.5 50,27.5Z"/><path fill="#c8daee" d="M50 27.5C54,23.5 58,21.5 63,21.5C71,21.5 76.5,26.5 76.5,34C76.5,40.5 74,45.5 71.4,50.5C69.8,53.6 70.4,66 69,74.5C68.3,78.6 63.1,79 62.3,75.2C61.1,69 58,59.5 50,59.5Z"/></svg>
             DentAxis
           </a>
           <p data-i18n="footer.tagline">Dental clinic management for Windows — offline first, with optional cloud backup and a mobile clinic portal. English &amp; Arabic.</p>
@@ -1017,14 +1027,16 @@
           'features.f7.title': 'Reports & analytics', 'features.f7.desc': 'Revenue trends, top procedures, ortho & implant analytics, printable dental reports and CSV export.',
           'features.f8.pill': 'PRO · MAX', 'features.f8.title': 'Cloud backup & mobile portal', 'features.f8.desc': 'Pro and Max back up your clinic automatically and let you open it from any phone or browser.',
           'showcase.kicker': 'Screenshots', 'showcase.title': 'Designed for clinical work', 'showcase.sub': 'Clean, fast screens your team learns in minutes.',
-          'showcase.r1.tag': '3D tooth chart', 'showcase.r1.title': 'Every tooth, in full detail',
-          'showcase.r1.desc': 'Rotate, zoom and select any tooth. Track conditions, root canal working lengths and clinical notes — FDI and Universal side by side.',
-          'showcase.r2.tag': 'Analytics', 'showcase.r2.title': 'Know what drives your revenue',
-          'showcase.r2.desc': 'Top procedures, counts and revenue at a glance — with one-click CSV export for deeper analysis.',
-          'showcase.r3.tag': 'Implant analytics', 'showcase.r3.title': 'Follow every implant case',
-          'showcase.r3.desc': 'Phase tracking from planning to restoration, collected payments and upcoming follow-up visits.',
-          'showcase.r4.tag': 'Dental reports', 'showcase.r4.title': 'Professional printable reports',
-          'showcase.r4.desc': 'Confidential patient chart reports with treatment history, legends and your clinic branding — print or save as PDF.',
+          'showcase.r1.tag': 'Appointments', 'showcase.r1.title': 'A clear day and month view',
+          'showcase.r1.desc': 'See today’s agenda, monthly load and appointment status at a glance — schedule, confirm and follow up without leaving the calendar.',
+          'showcase.r2.tag': '3D tooth chart', 'showcase.r2.title': 'Every tooth, in full detail',
+          'showcase.r2.desc': 'Rotate, zoom and select any tooth. Track conditions, root canal working lengths and clinical notes — FDI and Universal side by side.',
+          'showcase.r3.tag': '2D tooth chart', 'showcase.r3.title': 'Classic charting, still precise',
+          'showcase.r3.desc': 'Switch to the 2D chart for fast quadrant review — surfaces, conditions and selected-tooth details stay in sync with your clinical record.',
+          'showcase.r4.tag': 'Reports & analytics', 'showcase.r4.title': 'Know what drives your revenue',
+          'showcase.r4.desc': 'Money received, outstanding balances and trends over time — with filters by date and dentist, plus export when you need deeper analysis.',
+          'showcase.r5.tag': 'Implant analytics', 'showcase.r5.title': 'Follow every implant case',
+          'showcase.r5.desc': 'Phase tracking from planning to restoration, collected payments and upcoming follow-up visits.',
           'pricing.kicker': 'Pricing', 'pricing.title': 'Simple yearly pricing',
           'pricing.sub': 'Start free with every offline feature. Upgrade when you want cloud backup and access from your phone.',
           'pricing.billing': 'Billed yearly · Prices in Iraqi Dinar', 'pricing.currency': 'IQD', 'pricing.perYear': '/ year', 'pricing.perYearShort': 'per year',
@@ -1082,14 +1094,16 @@
           'features.f7.title': 'التقارير والتحليلات', 'features.f7.desc': 'اتجاهات الإيرادات، أكثر الإجراءات، تحليلات التقويم والزرعات، تقارير قابلة للطباعة وتصدير CSV.',
           'features.f8.pill': 'PRO · MAX', 'features.f8.title': 'النسخ الاحتياطي السحابي وبوابة الهاتف', 'features.f8.desc': 'خطتا Pro وMax تنسخان بيانات عيادتك تلقائياً وتتيحان فتحها من أي هاتف أو متصفح.',
           'showcase.kicker': 'لقطات من التطبيق', 'showcase.title': 'مصمّم للعمل السريري', 'showcase.sub': 'شاشات واضحة وسريعة يتعلمها فريقك في دقائق.',
-          'showcase.r1.tag': 'مخطط الأسنان ثلاثي الأبعاد', 'showcase.r1.title': 'كل سن بتفاصيله الكاملة',
-          'showcase.r1.desc': 'دوّر وكبّر واختر أي سن. تابع الحالات وأطوال قنوات الجذور والملاحظات السريرية — بترقيم FDI وUniversal جنباً إلى جنب.',
-          'showcase.r2.tag': 'التحليلات', 'showcase.r2.title': 'اعرف ما الذي يحرّك إيراداتك',
-          'showcase.r2.desc': 'أكثر الإجراءات والأعداد والإيرادات بنظرة واحدة — مع تصدير CSV بنقرة واحدة لتحليل أعمق.',
-          'showcase.r3.tag': 'تحليلات الزرعات', 'showcase.r3.title': 'تابع كل حالة زرع',
-          'showcase.r3.desc': 'متابعة المراحل من التخطيط حتى التركيب، والمدفوعات المحصّلة، وزيارات المتابعة القادمة.',
-          'showcase.r4.tag': 'تقارير الأسنان', 'showcase.r4.title': 'تقارير احترافية قابلة للطباعة',
-          'showcase.r4.desc': 'تقارير سرّية لمخطط المريض مع تاريخ العلاج والمفاتيح التوضيحية وهوية عيادتك — للطباعة أو الحفظ كـ PDF.',
+          'showcase.r1.tag': 'المواعيد', 'showcase.r1.title': 'عرض يومي وشهري واضح',
+          'showcase.r1.desc': 'اطّلع على جدول اليوم والحمل الشهري وحالة المواعيد بنظرة واحدة — جدولة وتأكيد ومتابعة دون مغادرة التقويم.',
+          'showcase.r2.tag': 'مخطط الأسنان ثلاثي الأبعاد', 'showcase.r2.title': 'كل سن بتفاصيله الكاملة',
+          'showcase.r2.desc': 'دوّر وكبّر واختر أي سن. تابع الحالات وأطوال قنوات الجذور والملاحظات السريرية — بترقيم FDI وUniversal جنباً إلى جنب.',
+          'showcase.r3.tag': 'مخطط الأسنان ثنائي الأبعاد', 'showcase.r3.title': 'تخطيط كلاسيكي بدقّة عالية',
+          'showcase.r3.desc': 'انتقل إلى المخطط ثنائي الأبعاد لمراجعة الأرباع بسرعة — الأسطح والحالات وتفاصيل السن المحدد تبقى متزامنة مع السجل السريري.',
+          'showcase.r4.tag': 'التقارير والتحليلات', 'showcase.r4.title': 'اعرف ما الذي يحرّك إيراداتك',
+          'showcase.r4.desc': 'المبالغ المستلمة والمستحقات والاتجاهات عبر الزمن — مع فلاتر حسب التاريخ والطبيب، وتصدير عند الحاجة لتحليل أعمق.',
+          'showcase.r5.tag': 'تحليلات الزرعات', 'showcase.r5.title': 'تابع كل حالة زرع',
+          'showcase.r5.desc': 'متابعة المراحل من التخطيط حتى التركيب، والمدفوعات المحصّلة، وزيارات المتابعة القادمة.',
           'pricing.kicker': 'الأسعار', 'pricing.title': 'أسعار سنوية بسيطة',
           'pricing.sub': 'ابدأ مجاناً بكل المزايا دون إنترنت. ارتقِ عندما تحتاج النسخ الاحتياطي السحابي والوصول من هاتفك.',
           'pricing.billing': 'الدفع سنوياً · الأسعار بالدينار العراقي', 'pricing.currency': 'د.ع', 'pricing.perYear': '/ سنوياً', 'pricing.perYearShort': 'سنوياً',
@@ -1139,6 +1153,20 @@
         });
       }
 
+      function applyLocalizedImages() {
+        var base = 'screenshots/' + (currentLang === 'ar' ? 'ar' : 'en') + '/';
+        document.querySelectorAll('.js-shot[data-shot]').forEach(function (el) {
+          var file = el.getAttribute('data-shot');
+          if (!file) return;
+          var url = base + file;
+          if (el.tagName === 'VIDEO') {
+            el.setAttribute('poster', url);
+          } else {
+            el.setAttribute('src', url);
+          }
+        });
+      }
+
       function setLang(lang) {
         currentLang = I18N[lang] ? lang : 'en';
         var html = document.documentElement;
@@ -1154,6 +1182,7 @@
           b.classList.toggle('active', b.getAttribute('data-lang') === currentLang);
         });
         applyWhatsAppLinks();
+        applyLocalizedImages();
         try { localStorage.setItem(LANG_KEY, currentLang); } catch (e) { /* ignore */ }
       }
 
